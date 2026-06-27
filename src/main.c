@@ -19,12 +19,17 @@ int main(void)
 
 
     char c;
+    char buffer[200];
 
     while((c = fgetc(fptr)) !=EOF)
     {
-
-
-
+        char * token = strtok(buffer,",");
+        while(token)
+        {
+            double val = atoi(token);
+            printf("%d\n",val);
+            token = strtok(NULL,",");
+        }
     }
 
 
