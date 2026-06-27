@@ -22,14 +22,15 @@ int main(void)
 
     char c;
     char buffer[BUFFSZ];
+    double dbl;
 
     while(fgets(buffer,BUFFSZ,fptr))
     {
         char * token = strtok(buffer,",");
         while(token)
         {
-            double val = atoi(token);
-            printf("%d\n",val);
+            sscanf(token,"%lf",&dbl);
+            printf("%d\n",dbl);
             token = strtok(NULL,",");
         }
     }
