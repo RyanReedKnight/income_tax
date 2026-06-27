@@ -3,6 +3,8 @@
 #include<string.h>
 #include<stdlib.h>
 
+#define BUFFSZ 400
+
 char oregon_single[] = "stuff/oregon_single.csv";
 
 int main(void)
@@ -19,9 +21,9 @@ int main(void)
 
 
     char c;
-    char buffer[200];
+    char buffer[BUFFSZ];
 
-    while((c = fgetc(fptr)) !=EOF)
+    while(fgets(buffer,BUFFSZ,fptr))
     {
         char * token = strtok(buffer,",");
         while(token)
